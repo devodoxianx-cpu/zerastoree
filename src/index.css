@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #0A0B0E;
+    --color-surface: #12141A;
+    --color-card: #181B24;
+    --color-yellow: #FFE600;
+    --color-gold: #F59E0B;
+    --color-cyan: #FFE600;
+    --color-blue: #F59E0B;
+    --color-white: #F5F7FA;
+    --color-muted: #A1A7B4;
+    --color-border: #282B36;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #0A0B0E;
+    color: #F5F7FA;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0B0E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #282B36;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 230, 0, 0.25);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFE600;
+  }
+}
+
+/* Cybernetic Grid & Ambient Glows (Bright Yellow) */
+.bg-cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 230, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 230, 0, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glow-yellow-sm, .glow-cyan-sm {
+  box-shadow: 0 0 15px rgba(255, 230, 0, 0.25);
+}
+
+.glow-yellow-md, .glow-cyan-md {
+  box-shadow: 0 0 25px rgba(255, 230, 0, 0.4);
+}
+
+.glow-yellow-lg, .glow-cyan-lg {
+  box-shadow: 0 0 45px rgba(255, 230, 0, 0.6);
+}
+
+.text-glow-yellow, .text-glow-cyan {
+  text-shadow: 0 0 12px rgba(255, 230, 0, 0.65);
+}
+
+.glass-panel {
+  background: rgba(24, 27, 36, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(40, 43, 54, 0.8);
+}
+
+.glass-panel-yellow, .glass-panel-cyan {
+  background: rgba(18, 20, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 230, 0, 0.25);
+}
+
+/* Hexagon / Cyber Corner clip */
+.cyber-clip-corner {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.font-gaming {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+}
+
+.font-tech {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Subtle Noticeable Electric Lightning Animations */
+@keyframes lightningFlash {
+  0%, 90%, 100% {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 8px rgba(255, 230, 0, 0.45));
+  }
+  92% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 20px rgba(255, 230, 0, 0.85));
+  }
+  93% {
+    opacity: 0.4;
+  }
+  95% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 28px rgba(255, 230, 0, 1));
+  }
+  97% {
+    opacity: 0.5;
+  }
+}
+
+.animate-lightning {
+  animation: lightningFlash 7s ease-in-out infinite;
+}
+
+.animate-lightning-fast {
+  animation: lightningFlash 4.5s ease-in-out infinite;
+}
